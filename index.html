@@ -9,16 +9,66 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/home.css" />
-    <title>Web MVC UI</title>
+    <title>Polls for People with Opinions</title>
 </head>
 
 <body>
     <header>
         <img src="assets/html_css_js.png">
-        <h1>Web MVC UI</h1>
+        <h1>Polls for People with Opinions</h1>
     </header>
 
-    <main></main>
+    <main>
+        <section id="new-poll-form">
+            <form>
+                <h2>Format Your Crucial Poll</h2>
+<!--If running into issues, make this a textarea instead of an input-->
+                <label>Poll Question:
+                    <input required question ="question">
+                </label>
+                <label>Option A
+                    <input required name="optionA">
+                </label>
+                <label>Option B
+                    <input required name="optionB">
+                </label>
+                <label>Brace Yourself for Opinions:
+                    <button class="engage">Start Poll</button>
+                </label>
+            </form>
+        </section>
+
+        <section id="poll-display">
+        </section>
+
+        <section id="poll-tally-keeper">
+            <h2>Tally the Votes!</h2>
+            <div class="opinion-box tally">
+                <span class="question">Which Parting Sentiment Is Better?</span>
+                <span class="option a">Best Wishes</span>
+                <button class="count a">+</button>
+                <button class="uncount a">-</button>
+                <span class="option b">Warmest Regards</span>
+                <button class="count b">+</button>
+                <button class="uncount b">-</button>
+                <button class="end-poll-button engage">Conclude Poll</button>
+            </div>
+        </section>
+
+        <section id="past-polls">
+                <h2>Past Polls</h2>
+<!--Placeholder spans, not sure if they need a container or will be generated through .create-->
+                <div class="polls container">
+                    <span class="question"></span>
+                    <span class="option a"></span>
+                    <span class="count a"></span>
+                    <span class="option b"></span>
+                    <span class="count b"></span>
+                </div>
+        </section>
+
+
+    </main>
 
     <footer>&copy;2021 Aspiring Software Developer</footer>
 
