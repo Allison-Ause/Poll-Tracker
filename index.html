@@ -19,44 +19,48 @@
     </header>
 
     <main>
-        <section id="new-poll-form">
-            <form>
-                <h2>Format Your Crucial Poll</h2>
+        <section id="active-poll">
+            <h1>Active Poll</h1>
+
+            <section id="new-poll-form">
+                <form>
+                    <h2>Format Your Crucial Poll</h2>
 <!--If running into issues, make this a textarea instead of an input-->
-                <label>Poll Question:
-                    <input required question ="question">
-                </label>
-                <label>Option A
-                    <input required name="optionA">
-                </label>
-                <label>Option B
-                    <input required name="optionB">
-                </label>
-                <label>Brace Yourself for Opinions:
-                    <button class="engage">Start Poll</button>
-                </label>
-            </form>
-        </section>
+                    <label>Poll Question:
+                        <input required question ="question">
+                    </label>
+                    <label>Option A
+                        <input required name="optionA">
+                    </label>
+                    <label>Option B
+                        <input required name="optionB">
+                    </label>
+                    <label>Brace Yourself for Opinions:
+                        <button class="engage">Start Poll</button>
+                    </label>
+                </form>
+            </section>
 
-        <section id="poll-display">
-        </section>
+            <section id="poll-display">
+            </section>
 
-        <section id="poll-tally-keeper">
-            <h2>Tally the Votes!</h2>
-            <div class="opinion-box tally">
-                <span class="question">Which Parting Sentiment Is Better?</span>
-                <span class="option a">Best Wishes</span>
-                <button class="count a">+</button>
-                <button class="uncount a">-</button>
-                <span class="option b">Warmest Regards</span>
-                <button class="count b">+</button>
-                <button class="uncount b">-</button>
-                <button class="end-poll-button engage">Conclude Poll</button>
-            </div>
+            <section id="poll-tally-keeper">
+                <h2>Tally the Votes!</h2>
+                <div class="opinion-box tally">
+                    <span class="question">Which Parting Sentiment Is Better?</span>
+                    <span class="option a">Best Wishes</span>
+                    <button class="count a">+</button>
+                    <button class="uncount a">-</button>
+                    <span class="option b">Warmest Regards</span>
+                    <button class="count b">+</button>
+                    <button class="uncount b">-</button>
+                    <button class="end-poll-button engage">Conclude Poll</button>
+                </div>
+            </section>
         </section>
 
         <section id="past-polls">
-                <h2>Past Polls</h2>
+                <h1>Past Polls</h1>
 <!--Placeholder spans, not sure if they need a container or will be generated through .create-->
                 <div class="polls container">
                     <span class="question"></span>
@@ -70,9 +74,6 @@
 
     </main>
 
-    <footer>&copy;2021 Aspiring Software Developer</footer>
-
-    <script type="module" src="app.js"></script>
 </body>
 
 </html>
