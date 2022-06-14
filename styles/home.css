@@ -61,6 +61,11 @@ main {
         ;
 }
 
+.question {
+    grid-area: question;
+    font-size: 20px;
+}
+
 .option.a {
     grid-area: option-a;
 }
@@ -123,4 +128,9 @@ label {
 
 .polls-container .opinion-box {
     max-width: 300px;
+}
+
+
+.hidden {
+    display: none !important;
 }
