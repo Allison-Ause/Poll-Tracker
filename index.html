@@ -27,7 +27,7 @@
                     <h2>Format Your Crucial Poll</h2>
 <!--If running into issues, make this a textarea instead of an input-->
                     <label>Poll Question:
-                        <input required question ="question">
+                        <input required name ="question">
                     </label>
                     <label>Option A
                         <input required name="optionA">
@@ -43,11 +43,11 @@
 
             <section id="poll-display">
                 <div class="opinion-box">
-                    <span class="question">Which Parting Sentiment Is Better?</span>
-                    <span class="option a">Best Wishes</span>
-                    <span class="count a">2</span>
-                    <span class="option b">Warmest Regards</span>
-                    <span class="count b">4</span>
+                    <span class="question"></span>
+                    <span class="option a"></span>
+                    <span class="count a"></span>
+                    <span class="option b"></span>
+                    <span class="count b"></span>
                 </div>
             </section>
 
@@ -69,12 +69,14 @@
         <section id="past-polls">
                 <h1>Past Polls</h1>
 <!--Placeholder spans, not sure if they need a container or will be generated through .create-->
-                <div class="polls container">
-                    <span class="question">??</span>
-                    <span class="option a">Yes</span>
-                    <span class="count a">1</span>
-                    <span class="option b">No</span>
-                    <span class="count b">2</span>
+                <div class="polls-container">
+                    <div class="opinion-box">
+                        <span class="question">??</span>
+                        <span class="option a">Yes</span>
+                        <span class="count a">1</span>
+                        <span class="option b">No</span>
+                        <span class="count b">2</span>
+                    </div>
                 </div>
         </section>
 

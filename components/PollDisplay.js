@@ -1,3 +1,5 @@
+import OpinionBox from './OpinionBox.js';
+
 export default function createPollDisplay(root) {
     // reference DOM
 
@@ -11,9 +13,16 @@ export default function createPollDisplay(root) {
 
         if (poll) {
             root.classList.remove('hidden');
-            return;
         }
-        root.classList.add('hidden');
-        
+        else {
+            root.classList.add('hidden');
+        }
+        root.innerHTML = '';
+
+        if (poll) {
+            const opinionBox = OpinionBox(poll);
+            root.append(opinionBox);
+        }
+
     };
 }
