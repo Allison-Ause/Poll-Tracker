@@ -9,13 +9,20 @@ import createPollTallyKeeper from './components/PollTallyKeeper.js';
 
 // import state and dispatch functions
 
-import state from './state.js';
+import state, { newPoll } from './state.js';
 
 // Create each component: 
 // - pass in the root element via querySelector
 const PollDisplay = createPollDisplay(document.querySelector('#poll-display'));
-const NewPollForm = createNewPollForm(document.querySelector('#new-poll-form'));
+const NewPollForm = createNewPollForm(document.querySelector('#new-poll-form'), {
+    handleNewPoll: (question, optionAName, optionBName) => {
+        newPoll(question, optionAName, optionBName);
+        display();
+    }
+});
+
 const PollTallyKeeper = createPollTallyKeeper(document.querySelector('#poll-tally-keeper'));
+
 
 
 // - pass any needed handler functions as properties of an actions object 

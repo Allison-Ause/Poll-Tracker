@@ -36,3 +36,12 @@ export function newPoll(question, optionAName, optionBName) {
         optionB: { name: optionBName, count: 0 }
     };
 }
+
+export function count(option) {
+    if (option === 'A') {
+        state.poll.optionA.count++;
+    }
+    if (option === 'B'){
+        state.poll.optionB.count++;
+    }
+}

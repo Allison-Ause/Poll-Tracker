@@ -9,15 +9,16 @@ export default function createPollTallyKeeper(root) {
     // return ({ data }) => {
     return (props) => {
         const poll = props.poll;
-        
+
         if (poll) {
             root.classList.remove('hidden');
-            return;
+
+            questionDisplay.textContent = poll.question;
+            optionADisplay.textContent = poll.optionA.name;
+            optionBDisplay.textContent = poll.optionB.name;
         }
-        root.classList.add('hidden');
-        
-        questionDisplay.textContent = poll.question;
-        optionADisplay.textContent = poll.optionA.name;
-        optionBDisplay.textContent = poll.optionB.name;
+        else {
+            root.classList.add('hidden');
+        }
     };
 }
