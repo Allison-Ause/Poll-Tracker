@@ -12,12 +12,14 @@ const state = {};
 export function initialize() {
     // What is the initial shape of state?
     // For example:
-    
-    state.poll = {
-        question: '',
-        optionA: { name: 'optionA', count: 0 }, 
-        optionB: { name: 'optionB', count: 0 }, 
-    };
+
+    state.poll = null;
+
+    // {
+    //     question: '',
+    //     optionA: { name: 'optionA', count: 0 }, 
+    //     optionB: { name: 'optionB', count: 0 }, 
+    // };
 
     // state.pastGames = [];
 }
@@ -27,3 +29,10 @@ initialize();
 export default state;
 
 // export dispatch functions that modify state
+export function newPoll(question, optionAName, optionBName) {
+    state.poll = {
+        question,
+        optionA: { name: optionAName, count: 0 },
+        optionB: { name: optionBName, count: 0 }
+    };
+}

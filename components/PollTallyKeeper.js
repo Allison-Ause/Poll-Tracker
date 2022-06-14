@@ -1,5 +1,7 @@
 export default function createPollTallyKeeper(root) {
     // reference DOM
+    const [questionDisplay, optionADisplay, optionBDisplay] = root.querySelectorAll('span');
+
 
     // event listeners
 
@@ -13,5 +15,9 @@ export default function createPollTallyKeeper(root) {
             return;
         }
         root.classList.add('hidden');
+        
+        questionDisplay.textContent = poll.question;
+        optionADisplay.textContent = poll.optionA.name;
+        optionBDisplay.textContent = poll.optionB.name;
     };
 }
