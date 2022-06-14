@@ -45,3 +45,12 @@ export function count(option) {
         state.poll.optionB.count++;
     }
 }
+
+export function uncount(option) {
+    if (option === 'A') {
+        state.poll.optionA.count--;
+    }
+    if (option === 'B') {
+        state.poll.optionB.count--;
+    }
+}

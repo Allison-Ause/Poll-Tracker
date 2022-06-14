@@ -3,6 +3,7 @@ import state, {
     // import dispatch functions
     newPoll,
     count,
+    uncount,
 } from '../state.js';
 
 // make sure state is at known starting point
@@ -27,7 +28,7 @@ test('the newPoll function creates poll from inputs', (expect) => {
     });
 });
 
-test('counts vote for optionA and/or optionB', (expect) => {
+test('increases count for optionA and/or optionB', (expect) => {
 
     newPoll('why', 'yes', 'no');
 
@@ -46,5 +47,26 @@ test('counts vote for optionA and/or optionB', (expect) => {
         question: 'why',
         optionA: { name: 'yes', count: 2 },
         optionB: { name: 'no', count: 1 },
+    });
+});
+
+test('decrements count for optionA and/or optionB', (expect) => {
+
+    newPoll('why', 'yes', 'no',);
+
+    uncount('A');
+
+    expect.deepEqual(state.poll, {
+        question: 'why',
+        optionA: { name: 'yes', count: -1 },
+        optionB: { name: 'no', count: 0 },
+    });
+
+    uncount('B');
+
+    expect.deepEqual(state.poll, {
+        question: 'why',
+        optionA: { name: 'yes', count: -1 },
+        optionB: { name: 'no', count: -1 },
     });
 });
