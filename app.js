@@ -4,8 +4,8 @@
 // import component creators
 import createPollDisplay from './components/PollDisplay.js';
 import createNewPollForm from './components/NewPollForm.js';
-import createOpinionBox from './components/OpinionBox.js';
-import createPolls from './components/Polls.js';
+//import createOpinionBox from './components/OpinionBox.js';
+//import createPolls from './components/Polls.js';
 import createPollTallyKeeper from './components/PollTallyKeeper.js';
 
 // import state and dispatch functions

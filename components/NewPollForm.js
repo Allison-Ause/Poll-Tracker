@@ -8,7 +8,7 @@ export default function createNewPollForm(root) {
     return (props) => {
         const poll = props.poll;
 
-        if (poll) {
+        if (!poll) {
             root.classList.remove('hidden');
             return;
         }

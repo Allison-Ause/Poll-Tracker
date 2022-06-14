@@ -1,6 +1,7 @@
 export default function createPollDisplay(root) {
     // reference DOM
 
+
     // event listeners
 
     // should return its component render function
@@ -8,11 +9,11 @@ export default function createPollDisplay(root) {
     return (props) => {
         const poll = props.poll;
 
-        if (!poll) {
-            root.classList.add('hidden');
+        if (poll) {
+            root.classList.remove('hidden');
             return;
         }
-        root.classList.remove('hidden');
+        root.classList.add('hidden');
         
     };
 }

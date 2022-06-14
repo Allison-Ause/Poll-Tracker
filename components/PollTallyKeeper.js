@@ -8,10 +8,10 @@ export default function createPollTallyKeeper(root) {
     return (props) => {
         const poll = props.poll;
         
-        if (!poll) {
-            root.classList.add('hidden');
+        if (poll) {
+            root.classList.remove('hidden');
             return;
         }
-        root.classList.remove('hidden');
+        root.classList.add('hidden');
     };
 }
