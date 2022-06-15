@@ -8,10 +8,9 @@ const state = {};
 //    }
 // 
 
-// initialize state, also used in test
+
 export function initialize() {
-    // What is the initial shape of state?
-    // For example:
+
 
     state.poll = null;
 
@@ -21,7 +20,15 @@ export function initialize() {
     //     optionB: { name: 'optionB', count: 0 }, 
     // };
 
-    // state.pastGames = [];
+    state.pastPolls = [{
+        question: '',
+        optionA: { name: 'optionA', count: 0 }, 
+        optionB: { name: 'optionB', count: 0 }, 
+    }, {
+        question: '',
+        optionA: { name: 'optionA', count: 0 }, 
+        optionB: { name: 'optionB', count: 0 }, 
+    }];
 }
 // call initialize
 initialize();

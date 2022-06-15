@@ -20,9 +20,10 @@ export default function createPollDisplay(root) {
         root.innerHTML = '';
 
         if (poll) {
-            const opinionBox = OpinionBox(poll);
+            const opinionBox = OpinionBox({ poll }); // should be returning poll object
             root.append(opinionBox);
         }
 
     };
 }
+

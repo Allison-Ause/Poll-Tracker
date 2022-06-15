@@ -23,9 +23,9 @@ export default function createPollTallyKeeper(root, dispatch) {
         handleUncount('B');
     });
 
-    endPoll.addEventListener('click' () => {
-        
-    });
+    // endPoll.addEventListener('click' () => {
+
+    // });
 
 
     return (props) => {

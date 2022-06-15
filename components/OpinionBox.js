@@ -1,5 +1,5 @@
-export default function OpinionBox(poll) {
-
+export default function OpinionBox(props) {
+    const poll = props.poll;
 
     const div = document.createElement('div');
     div.classList.add('opinion-box');
