@@ -1,12 +1,33 @@
-export default function createPollTallyKeeper(root) {
-    // reference DOM
-    const [questionDisplay, optionADisplay, optionBDisplay] = root.querySelectorAll('span');
+export default function createPollTallyKeeper(root, dispatch) {
+    
+    const handleCount = dispatch.handleCount;
+    const handleUncount = dispatch.handleUncount;
 
+    const [questionDisplay, optionADisplay, optionBDisplay] = root.querySelectorAll('span');
+    const [countA, uncountA, countB, uncountB, endPoll] = root.querySelectorAll('button');
 
     // event listeners
+    countA.addEventListener('click', () => {
+        handleCount('A');
+    });
 
-    // should return its component render function
-    // return ({ data }) => {
+    uncountA.addEventListener('click', () => {
+        handleUncount('A');
+    });
+
+    countB.addEventListener('click', () => {
+        handleCount('B');
+    });
+
+    uncountB.addEventListener('click', () => {
+        handleUncount('B');
+    });
+
+    endPoll.addEventListener('click' () => {
+        
+    });
+
+
     return (props) => {
         const poll = props.poll;
 

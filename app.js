@@ -9,7 +9,7 @@ import createPollTallyKeeper from './components/PollTallyKeeper.js';
 
 // import state and dispatch functions
 
-import state, { newPoll } from './state.js';
+import state, { newPoll, count, uncount } from './state.js';
 
 // Create each component: 
 // - pass in the root element via querySelector
@@ -21,7 +21,17 @@ const NewPollForm = createNewPollForm(document.querySelector('#new-poll-form'), 
     }
 });
 
-const PollTallyKeeper = createPollTallyKeeper(document.querySelector('#poll-tally-keeper'));
+const PollTallyKeeper = createPollTallyKeeper(document.querySelector('#poll-tally-keeper'), {
+    handleCount: (option) => {
+        count(option);
+        display();
+    },
+
+    handleUncount: (option) => {
+        uncount(option);
+        display();
+    }
+});
 
 
 
