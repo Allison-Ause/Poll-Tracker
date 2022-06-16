@@ -2,11 +2,11 @@ export default function createPollTallyKeeper(root, dispatch) {
     
     const handleCount = dispatch.handleCount;
     const handleUncount = dispatch.handleUncount;
+    const handleEndPoll = dispatch.handleEndPoll;
 
     const [questionDisplay, optionADisplay, optionBDisplay] = root.querySelectorAll('span');
     const [countA, uncountA, countB, uncountB, endPoll] = root.querySelectorAll('button');
 
-    // event listeners
     countA.addEventListener('click', () => {
         handleCount('A');
     });
@@ -23,9 +23,9 @@ export default function createPollTallyKeeper(root, dispatch) {
         handleUncount('B');
     });
 
-    // endPoll.addEventListener('click' () => {
-
-    // });
+    endPoll.addEventListener('click', () => {
+        handleEndPoll();
+    });
 
 
     return (props) => {

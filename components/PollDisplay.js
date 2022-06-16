@@ -1,13 +1,7 @@
 import OpinionBox from './OpinionBox.js';
 
 export default function createPollDisplay(root) {
-    // reference DOM
 
-
-    // event listeners
-
-    // should return its component render function
-    // return ({ data }) => {
     return (props) => {
         const poll = props.poll;
 
@@ -20,7 +14,7 @@ export default function createPollDisplay(root) {
         root.innerHTML = '';
 
         if (poll) {
-            const opinionBox = OpinionBox({ poll }); // should be returning poll object
+            const opinionBox = OpinionBox(poll); 
             root.append(opinionBox);
         }
 

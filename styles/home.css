@@ -1,9 +1,3 @@
-/* CSS for home page (index.html) */
-
-/* when ready for .hidden class use 
-display: none !important; 
-to override display:grid default*/
-
 
 main {
     padding: 0 30px 60px 30px;

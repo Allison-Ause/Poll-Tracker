@@ -1,41 +1,25 @@
-// set state to an empty object
-const state = {};
-//
-// Poll Data Object: {
-//    question: '',
-//    optionA: { name: 'optionA', count: 0 }, 
-//    optionB: { name: 'optionB', count: 0 }, 
-//    }
-// 
 
+const state = {};
 
 export function initialize() {
 
 
     state.poll = null;
 
+    // filled state for reference
     // {
     //     question: '',
     //     optionA: { name: 'optionA', count: 0 }, 
     //     optionB: { name: 'optionB', count: 0 }, 
     // };
 
-    state.pastPolls = [{
-        question: '',
-        optionA: { name: 'optionA', count: 0 }, 
-        optionB: { name: 'optionB', count: 0 }, 
-    }, {
-        question: '',
-        optionA: { name: 'optionA', count: 0 }, 
-        optionB: { name: 'optionB', count: 0 }, 
-    }];
+    state.pastPolls = [];
 }
-// call initialize
+
 initialize();
-// export state as primary (default) export
+
 export default state;
 
-// export dispatch functions that modify state
 export function newPoll(question, optionAName, optionBName) {
     state.poll = {
         question,
@@ -60,4 +44,11 @@ export function uncount(option) {
     if (option === 'B') {
         state.poll.optionB.count--;
     }
+}
+
+export function endPoll() {
+
+    state.pastPolls.push(state.poll);
+    state.poll = null;
+
 }

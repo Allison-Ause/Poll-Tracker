@@ -4,6 +4,7 @@ import state, {
     newPoll,
     count,
     uncount,
+    endPoll,
 } from '../state.js';
 
 // make sure state is at known starting point
@@ -69,4 +70,24 @@ test('decrements count for optionA and/or optionB', (expect) => {
         optionA: { name: 'yes', count: -1 },
         optionB: { name: 'no', count: -1 },
     });
+});
+
+test('endPoll pushes info to past poll and resets state', (expect) => {
+    
+    expect.deepEqual(state.pastPolls, []);
+
+    newPoll('why', 'yes', 'no');
+
+    count('A');
+    count('A');
+    count('B');
+
+    endPoll();
+
+    expect.deepEqual(state.pastPolls, [{
+        question: 'why',
+        optionA: { name: 'yes', count: 2 },
+        optionB: { name: 'no', count: 1 },
+    }]);
+    expect.deepEqual(state.poll, null);
 });

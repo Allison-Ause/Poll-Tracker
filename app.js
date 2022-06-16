@@ -1,18 +1,11 @@
-// import utilities
 
-
-// import component creators
 import createPollDisplay from './components/PollDisplay.js';
 import createNewPollForm from './components/NewPollForm.js';
 import createPolls from './components/Polls.js';
 import createPollTallyKeeper from './components/PollTallyKeeper.js';
 
-// import state and dispatch functions
+import state, { newPoll, count, uncount, endPoll } from './state.js';
 
-import state, { newPoll, count, uncount } from './state.js';
-
-// Create each component: 
-// - pass in the root element via querySelector
 const PollDisplay = createPollDisplay(document.querySelector('#poll-display'));
 
 const NewPollForm = createNewPollForm(document.querySelector('#new-poll-form'), {
@@ -31,6 +24,11 @@ const PollTallyKeeper = createPollTallyKeeper(document.querySelector('#poll-tall
     handleUncount: (option) => {
         uncount(option);
         display();
+    },
+
+    handleEndPoll: () => {
+        endPoll();
+        display();
     }
 });
 
@@ -38,14 +36,13 @@ const Polls = createPolls(document.querySelector('#past-polls'));
 
 
 function display() {
-    // Call each component passing in props that are the pieces of state this component needs
 
     PollDisplay({ poll: state.poll });
     NewPollForm({ poll: state.poll });
     PollTallyKeeper({ poll: state.poll });
-    Polls({ poll: state.pastPolls });
+    Polls({ pastPolls: state.pastPolls });
 
 }
 
-// Call display on page load
+
 display();
