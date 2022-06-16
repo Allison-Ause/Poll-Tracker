@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+       <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,19 +9,70 @@
     <link rel="stylesheet" href="styles/reset.css" />
     <link rel="stylesheet" href="styles/main.css" />
     <link rel="stylesheet" href="styles/home.css" />
-    <title>Web MVC UI</title>
+    <title>Polls for People with Opinions</title>
 </head>
 
 <body>
     <header>
         <img src="assets/html_css_js.png">
-        <h1>Web MVC UI</h1>
+        <h1>Polls for People with Opinions</h1>
     </header>
 
-    <main></main>
+    <main>
+        <section id="active-poll">
+            <h1>Active Poll</h1>
 
-    <footer>&copy;2021 Aspiring Software Developer</footer>
+            <section id="new-poll-form">
+                <form>
+                    <h2>Format Your Crucial Poll</h2>
+                    <label>Poll Question:
+                        <input required name ="question">
+                    </label>
+                    <label>Option A
+                        <input required name="optionA">
+                    </label>
+                    <label>Option B
+                        <input required name="optionB">
+                    </label>
+                    <label>Brace Yourself for Opinions:
+                        <button class="engage">Start Poll</button>
+                    </label>
+                </form>
+            </section>
 
+            <section id="poll-display">
+            </section>
+
+            <section id="poll-tally-keeper">
+                <h2>Tally the Votes!</h2>
+                <div class="opinion-box tally">
+                    <span class="question">What?</span>
+                    <span class="option a">This</span>
+                    <button class="count a">+</button>
+                    <button class="uncount a">-</button>
+                    <span class="option b">That</span>
+                    <button class="count b">+</button>
+                    <button class="uncount b">-</button>
+                    <button class="end-poll-button engage">Conclude Poll</button>
+                </div>
+            </section>
+        </section>
+
+        <section id="past-polls">
+                <h1>Past Polls</h1>
+                <div class="polls-container">
+                    <div class="opinion-box">
+                        <span class="question">??</span>
+                        <span class="option a">Yes</span>
+                        <span class="count a">1</span>
+                        <span class="option b">No</span>
+                        <span class="count b">2</span>
+                    </div>
+                </div>
+        </section>
+
+
+    </main>
     <script type="module" src="app.js"></script>
 </body>
 
